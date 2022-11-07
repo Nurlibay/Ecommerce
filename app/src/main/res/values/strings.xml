@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Ecommerce</string>
+    <string name="ecommerce_nconcept">Ecommerce \nConcept</string>
+    <string name="explorer">Explorer</string>
+    <string name="sale">Sale</string>
+    <string name="favourite">Favourite</string>
+    <string name="profile">Profile</string>
+</resources>

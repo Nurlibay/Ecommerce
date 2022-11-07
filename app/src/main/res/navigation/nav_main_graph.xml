@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main_graph"
+    app:startDestination="@id/explorerScreen">
+
+    <fragment
+        android:id="@+id/explorerScreen"
+        android:name="uz.nurlibaydev.ecommerce.presentation.main.explorer.ExplorerScreen"
+        android:label="ExplorerScreen"
+        tools:layout="@layout/screen_explorer" />
+
+    <fragment
+        android:id="@+id/saleScreen"
+        android:name="uz.nurlibaydev.ecommerce.presentation.main.sale.SaleScreen"
+        android:label="SaleScreen"
+        tools:layout="@layout/screen_sale" />
+
+    <fragment
+        android:id="@+id/favouriteScreen"
+        android:name="uz.nurlibaydev.ecommerce.presentation.main.favourite.FavouriteScreen"
+        android:label="FavouriteScreen"
+        tools:layout="@layout/screen_favourite" />
+
+    <fragment
+        android:id="@+id/profileScreen"
+        android:name="uz.nurlibaydev.ecommerce.presentation.main.profile.ProfileScreen"
+        android:label="ProfileScreen"
+        tools:layout="@layout/screen_profile" />
+
+</navigation>
