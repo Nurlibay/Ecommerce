@@ -2,7 +2,7 @@ package uz.nurlibaydev.ecommerce.utils
 
 object Constants {
 
-    const val BASE_URL = "https://807c-185-213-230-101.in.ngrok.io/"
+    const val BASE_URL = "https://run.mocky.io/v3/"
 
     const val LOCAL = "local"
     const val TOKEN = "token"

@@ -7,6 +7,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.setupWithNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
+import dagger.hilt.android.AndroidEntryPoint
 import uz.nurlibaydev.ecommerce.R
 import uz.nurlibaydev.ecommerce.databinding.ContainerMainBinding
 
@@ -14,6 +15,7 @@ import uz.nurlibaydev.ecommerce.databinding.ContainerMainBinding
  *  Created by Nurlibay Koshkinbaev on 07/11/2022 15:19
  */
 
+@AndroidEntryPoint
 class MainContainer : Fragment(R.layout.container_main) {
 
     private lateinit var navController: NavController

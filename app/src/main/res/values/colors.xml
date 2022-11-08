@@ -11,5 +11,6 @@
 
     <!-- Manually added colors -->
     <color name="bg_main">#F8F8F8</color>
+    <color name="color_yellow">#FF6E4E</color>
 
 </resources>

@@ -40,7 +40,7 @@ android {
 }
 
 ext {
-    nav_version = "2.5.2"
+    nav_version = "2.5.3"
     room_version = "2.4.3"
 }
 
@@ -101,4 +101,7 @@ dependencies {
     /** kotlinx.coroutines */
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
+
+    /** glide for image loading */
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
 }
