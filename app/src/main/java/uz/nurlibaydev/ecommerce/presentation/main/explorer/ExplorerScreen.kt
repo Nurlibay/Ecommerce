@@ -44,7 +44,7 @@ class ExplorerScreen: Fragment(R.layout.screen_explorer) {
         }
         categoryAdapter.setOnItemCategorySelectListener {
             val list = mutableListOf<CategoryData>()
-            /** to do */
+            // TODO
         }
     }
 
