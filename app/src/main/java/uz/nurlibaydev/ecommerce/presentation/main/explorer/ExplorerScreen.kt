@@ -46,6 +46,10 @@ class ExplorerScreen: Fragment(R.layout.screen_explorer) {
             val list = mutableListOf<CategoryData>()
             // TODO
         }
+
+        binding.filterButton.setOnClickListener {
+
+        }
     }
 
     private fun setupObserver() {
