@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".BottomFilterSheet">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:background="@drawable/shape_square_blue"
+            android:src="@drawable/ic_close"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Filter Options"
+            android:layout_marginStart="69dp"
+            android:textSize="18sp"
+            android:fontFamily="@font/mark_pro"
+            android:textStyle="bold"
+            android:textColor="@color/bg_splash"/>
+
+        <Button
+            android:layout_width="86dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="-4dp"
+            android:layout_marginEnd="20dp"
+            android:text="Done"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/color_yellow"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Brand"
+        android:textSize="18sp"
+        android:fontFamily="@font/mark_pro"
+        android:textStyle="bold"
+        android:layout_marginEnd="31dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="26dp"
+        style="@style/TextAppearance.AppCompat.Title"/>
+
+
+    <Spinner
+        android:id="@+id/brand_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="31dp"
+        android:spinnerMode="dropdown" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        android:textSize="18sp"
+        android:fontFamily="@font/mark_pro"
+        android:textStyle="bold"
+        android:layout_marginEnd="31dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="26dp"
+        style="@style/TextAppearance.AppCompat.Title"/>
+
+
+    <Spinner
+        android:id="@+id/price_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="31dp"
+        android:spinnerMode="dropdown" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Size"
+        android:textSize="18sp"
+        android:fontFamily="@font/mark_pro"
+        android:textStyle="bold"
+        android:layout_marginEnd="31dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="26dp"
+        style="@style/TextAppearance.AppCompat.Title"/>
+
+
+    <Spinner
+        android:id="@+id/size_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="31dp"
+        android:spinnerMode="dropdown" />
+
+
+</LinearLayout>

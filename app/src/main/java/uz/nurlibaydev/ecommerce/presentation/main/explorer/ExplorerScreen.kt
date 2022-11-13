@@ -8,7 +8,9 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import dagger.hilt.android.AndroidEntryPoint
+import uz.nurlibaydev.ecommerce.BottomFilterSheet
 import uz.nurlibaydev.ecommerce.R
 import uz.nurlibaydev.ecommerce.data.models.CategoryData
 import uz.nurlibaydev.ecommerce.databinding.ScreenExplorerBinding
@@ -21,13 +23,15 @@ import uz.nurlibaydev.ecommerce.utils.extenions.showMessage
  */
 
 @AndroidEntryPoint
-class ExplorerScreen: Fragment(R.layout.screen_explorer) {
+class ExplorerScreen : Fragment(R.layout.screen_explorer) {
 
     private val binding: ScreenExplorerBinding by viewBinding()
     private val categoryAdapter by lazy(LazyThreadSafetyMode.NONE) { CategoryAdapter() }
     private val hotSalesAdapter by lazy(LazyThreadSafetyMode.NONE) { HotSalesAdapter() }
     private val navController by lazy(LazyThreadSafetyMode.NONE) { findNavController() }
     private val viewModel: ProductViewModel by viewModels()
+
+    private lateinit var dialogFilter: BottomSheetDialog
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -49,6 +53,13 @@ class ExplorerScreen: Fragment(R.layout.screen_explorer) {
 
         binding.filterButton.setOnClickListener {
 
+            BottomFilterSheet(this)
+
+
+//            val dialogView = layoutInflater.inflate(R.layout.fragment_bottom_filter_sheet, null)
+//            dialogFilter = BottomSheetDialog(requireActivity())
+//            dialogFilter.setContentView(dialogView)
+//            dialogFilter.show()
         }
     }
 
@@ -78,7 +89,7 @@ class ExplorerScreen: Fragment(R.layout.screen_explorer) {
             }
         }
     }
-    
+
     private fun loading(b: Boolean) {
         binding.progressBar.isVisible = b
     }
