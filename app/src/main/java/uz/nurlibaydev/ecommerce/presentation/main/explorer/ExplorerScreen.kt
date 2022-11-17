@@ -8,12 +8,16 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import dagger.hilt.android.AndroidEntryPoint
+import uz.nurlibaydev.ecommerce.BottomFilterSheet
 import uz.nurlibaydev.ecommerce.R
 import uz.nurlibaydev.ecommerce.data.models.CategoryData
+import uz.nurlibaydev.ecommerce.databinding.FragmentBottomFilterSheetBinding
 import uz.nurlibaydev.ecommerce.databinding.ScreenExplorerBinding
 import uz.nurlibaydev.ecommerce.utils.Categories
 import uz.nurlibaydev.ecommerce.utils.UiState
+import uz.nurlibaydev.ecommerce.utils.extenions.onClick
 import uz.nurlibaydev.ecommerce.utils.extenions.showMessage
 
 /**
@@ -21,7 +25,7 @@ import uz.nurlibaydev.ecommerce.utils.extenions.showMessage
  */
 
 @AndroidEntryPoint
-class ExplorerScreen: Fragment(R.layout.screen_explorer) {
+class ExplorerScreen : Fragment(R.layout.screen_explorer) {
 
     private val binding: ScreenExplorerBinding by viewBinding()
     private val categoryAdapter by lazy(LazyThreadSafetyMode.NONE) { CategoryAdapter() }
@@ -29,6 +33,8 @@ class ExplorerScreen: Fragment(R.layout.screen_explorer) {
     private val bestSellerAdapter by lazy(LazyThreadSafetyMode.NONE) { BestSellerAdapter() }
     private val navController by lazy(LazyThreadSafetyMode.NONE) { findNavController() }
     private val viewModel: ProductViewModel by viewModels()
+
+    private lateinit var dialogFilter: BottomSheetDialog
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -47,6 +53,11 @@ class ExplorerScreen: Fragment(R.layout.screen_explorer) {
         categoryAdapter.setOnItemCategorySelectListener {
             val list = mutableListOf<CategoryData>()
             // TODO
+        }
+
+        binding.filterButton.onClick {
+            val bottomSheet = BottomFilterSheet()
+            bottomSheet.show(childFragmentManager, "BOTTOM_SHEET")
         }
     }
 
@@ -77,7 +88,7 @@ class ExplorerScreen: Fragment(R.layout.screen_explorer) {
             }
         }
     }
-    
+
     private fun loading(b: Boolean) {
         binding.progressBar.isVisible = b
     }
