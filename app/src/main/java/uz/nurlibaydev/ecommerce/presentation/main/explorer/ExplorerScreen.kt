@@ -13,9 +13,11 @@ import dagger.hilt.android.AndroidEntryPoint
 import uz.nurlibaydev.ecommerce.BottomFilterSheet
 import uz.nurlibaydev.ecommerce.R
 import uz.nurlibaydev.ecommerce.data.models.CategoryData
+import uz.nurlibaydev.ecommerce.databinding.FragmentBottomFilterSheetBinding
 import uz.nurlibaydev.ecommerce.databinding.ScreenExplorerBinding
 import uz.nurlibaydev.ecommerce.utils.Categories
 import uz.nurlibaydev.ecommerce.utils.UiState
+import uz.nurlibaydev.ecommerce.utils.extenions.onClick
 import uz.nurlibaydev.ecommerce.utils.extenions.showMessage
 
 /**
@@ -51,15 +53,9 @@ class ExplorerScreen : Fragment(R.layout.screen_explorer) {
             // TODO
         }
 
-        binding.filterButton.setOnClickListener {
-
-            BottomFilterSheet(this)
-
-
-//            val dialogView = layoutInflater.inflate(R.layout.fragment_bottom_filter_sheet, null)
-//            dialogFilter = BottomSheetDialog(requireActivity())
-//            dialogFilter.setContentView(dialogView)
-//            dialogFilter.show()
+        binding.filterButton.onClick {
+            val bottomSheet = BottomFilterSheet()
+            bottomSheet.show(childFragmentManager, "BOTTOM_SHEET")
         }
     }
 
