@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
 import uz.nurlibaydev.ecommerce.R
-import uz.nurlibaydev.ecommerce.data.models.CategoryData
 import uz.nurlibaydev.ecommerce.data.models.responce.product.HomeStore
 import uz.nurlibaydev.ecommerce.databinding.ItemHotSalesBinding
 

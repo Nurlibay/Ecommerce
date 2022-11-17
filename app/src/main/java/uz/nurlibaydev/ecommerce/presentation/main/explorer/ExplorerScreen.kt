@@ -26,6 +26,7 @@ class ExplorerScreen: Fragment(R.layout.screen_explorer) {
     private val binding: ScreenExplorerBinding by viewBinding()
     private val categoryAdapter by lazy(LazyThreadSafetyMode.NONE) { CategoryAdapter() }
     private val hotSalesAdapter by lazy(LazyThreadSafetyMode.NONE) { HotSalesAdapter() }
+    private val bestSellerAdapter by lazy(LazyThreadSafetyMode.NONE) { BestSellerAdapter() }
     private val navController by lazy(LazyThreadSafetyMode.NONE) { findNavController() }
     private val viewModel: ProductViewModel by viewModels()
 
@@ -40,6 +41,7 @@ class ExplorerScreen: Fragment(R.layout.screen_explorer) {
         binding.apply {
             rvCategories.adapter = categoryAdapter
             rvHotSales.adapter = hotSalesAdapter
+            rvBestSeller.adapter = bestSellerAdapter
             categoryAdapter.submitList(Categories.list)
         }
         categoryAdapter.setOnItemCategorySelectListener {
@@ -66,6 +68,7 @@ class ExplorerScreen: Fragment(R.layout.screen_explorer) {
                     is UiState.Success -> {
                         loading(false)
                         hotSalesAdapter.submitList(it.data.home_store)
+                        bestSellerAdapter.submitList(it.data.best_seller)
                     }
                     else -> {
                         loading(false)

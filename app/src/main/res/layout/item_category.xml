@@ -11,7 +11,7 @@
         android:layout_height="72dp"
         android:background="@color/color_yellow"
         android:scaleType="centerInside"
-        android:src="@drawable/img_phone"
+        android:src="@drawable/phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

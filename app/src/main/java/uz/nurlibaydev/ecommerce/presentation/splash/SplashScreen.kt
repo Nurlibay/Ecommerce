@@ -24,7 +24,7 @@ class SplashScreen : Fragment(R.layout.screen_splash) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        lifecycleScope.launch {
+        lifecycleScope.launchWhenResumed {
             delay(1500)
             navController.navigate(SplashScreenDirections.actionSplashScreenToMainContainer())
         }
