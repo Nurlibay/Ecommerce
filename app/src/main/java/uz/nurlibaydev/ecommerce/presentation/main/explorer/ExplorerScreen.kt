@@ -13,7 +13,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import uz.nurlibaydev.ecommerce.BottomFilterSheet
 import uz.nurlibaydev.ecommerce.R
 import uz.nurlibaydev.ecommerce.data.models.CategoryData
-import uz.nurlibaydev.ecommerce.databinding.FragmentBottomFilterSheetBinding
 import uz.nurlibaydev.ecommerce.databinding.ScreenExplorerBinding
 import uz.nurlibaydev.ecommerce.utils.Categories
 import uz.nurlibaydev.ecommerce.utils.UiState
@@ -50,9 +49,14 @@ class ExplorerScreen : Fragment(R.layout.screen_explorer) {
             rvBestSeller.adapter = bestSellerAdapter
             categoryAdapter.submitList(Categories.list)
         }
-        categoryAdapter.setOnItemCategorySelectListener {
+        categoryAdapter.setOnItemCategorySelectListener {chosenCategory ->
             val list = mutableListOf<CategoryData>()
-            // TODO
+            list.addAll(Categories.list)
+
+            for (categoryItem in list) {
+                categoryItem.selected = categoryItem.id == chosenCategory.id
+            }
+            categoryAdapter.submitList(list)
         }
 
         binding.filterButton.onClick {
