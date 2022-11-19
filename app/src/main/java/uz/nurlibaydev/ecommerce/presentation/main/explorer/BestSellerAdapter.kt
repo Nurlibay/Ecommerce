@@ -64,7 +64,6 @@ object BestSellerItemCallback : DiffUtil.ItemCallback<BestSeller>() {
     }
 
     override fun areContentsTheSame(oldItem: BestSeller, newItem: BestSeller): Boolean {
-        return oldItem.id == newItem.id && oldItem.picture == newItem.picture && oldItem.discount_price == newItem.discount_price
-                && oldItem.price_without_discount == newItem.price_without_discount && oldItem.title == newItem.title
+        return oldItem == newItem
     }
 }

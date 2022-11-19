@@ -63,6 +63,6 @@ object CategoryItemCallback : DiffUtil.ItemCallback<CategoryData>() {
     }
 
     override fun areContentsTheSame(oldItem: CategoryData, newItem: CategoryData): Boolean {
-        return oldItem.id == newItem.id && oldItem.name == newItem.name && oldItem.icon == newItem.icon
+        return oldItem == newItem
     }
 }
